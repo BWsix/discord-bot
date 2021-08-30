@@ -1,3 +1,4 @@
+from bot.cogs.brainFuck import BrainFuck
 from os import environ
 import discord
 from discord.ext import commands
@@ -11,5 +12,6 @@ class BobTheBot(commands.Bot):
 def run():
   bot = BobTheBot(command_prefix="!", intents=discord.Intents.all())
   bot.add_cog(Stuff(bot))
+  bot.add_cog(BrainFuck(bot))
 
   bot.run(environ.get("BOT_TOKEN"))
