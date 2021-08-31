@@ -1,5 +1,5 @@
 import requests
-import urllib
+import io
 import discord
 from discord.ext import commands
 
@@ -15,13 +15,9 @@ class QRCode(commands.Cog):
       BRAINFUCK_API_BASE_URL,
       {"url": url}
     )
-    res = res.json()
-
-    if error:=res.get("error"):
-      return await ctx.send(error)
 
     try:
-      stream = urllib.request.urlopen(res["data"]).file
-      await ctx.send(file=discord.File(stream, filename=res["url"]+".png"))
-    except Exception:
-      await ctx.send("error")
+      stream = io.BytesIO(res.content)
+      await ctx.send(file=discord.File(stream, filename="url.png"))
+    except Exception as error:
+      await ctx.send(error)
