@@ -13,6 +13,8 @@
     - [!actt](#cmd-bf-actt) : AsCii To Text
   - [QRCode](#cmd-qr)
     - [!qr](#cmd-qr-qr) : QRcode
+  - [Image to Accii](#cmd-itac)
+    - [!itac](#cmd-itac-itac) : Image To AsCii
 - [如何貢獻](#contribute)
 
 ## 指令列表 <a id="cmd"></a>
@@ -66,6 +68,16 @@ powered by [QRCode-api](https://github.com/BWsix/QRCode-api)
 **Example**
 
 ![](https://i.imgur.com/vnROdjL.png)
+
+### Image to Ascii <a id="cmd-itac"></a>
+
+#### image to ascii <a id="cmd-itac-itac"></a>
+
+`!itac` + _Image_
+
+**Example**
+
+![](https://i.imgur.com/J64mnSg.png)
 
 ## 貢獻 <a id="contribute"></a>
 

@@ -1,3 +1,4 @@
+from bot.cogs.image2Ascii import Image2Ascii
 import discord
 from discord.ext import commands
 
@@ -14,5 +15,6 @@ def run(token: str):
   bot.add_cog(Stuff(bot))
   bot.add_cog(BrainFuck(bot))
   bot.add_cog(QRCode(bot))
+  bot.add_cog(Image2Ascii(bot))
 
   bot.run(token)
