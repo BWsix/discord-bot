@@ -1,3 +1,4 @@
+import re
 import requests
 from discord.ext import commands
 
@@ -34,3 +35,32 @@ class BrainFuck(commands.Cog):
     res = res.json()
 
     await ctx.send(res.get("error") or res["code"])
+
+  @commands.command(name='ttac')
+  async def ttac(self, ctx: commands.Context, *text: str):
+    """Converts text to ascii code array."""
+
+    text = " ".join(text)
+    
+    res = requests.post(
+      BRAINFUCK_API_BASE_URL + "utils",
+      {"text": text}
+    )
+    res = res.json()
+
+    await ctx.send(res.get("error") or res["asciiArr"])
+
+  @commands.command(name='actt')
+  async def actt(self, ctx: commands.Context, *text: str):
+    """Converts ascii code array to text."""
+
+    text = " ".join(text)
+    arr = re.findall(r"\d+", text)
+
+    res = requests.post(
+      BRAINFUCK_API_BASE_URL + "utils",
+      {"asciiArr": arr}
+    )
+    res = res.json()
+
+    await ctx.send(res.get("error") or res["text"])
