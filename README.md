@@ -7,10 +7,12 @@
 
 - [指令列表](#cmd)
   - [BrainFuck](#cmd-bf)
-    - [!br](#cmd-bf-bf)
-    - [!ttbr](#cmd-bf-ttbf)
+    - [!br](#cmd-bf-bf) : BrainFuck
+    - [!ttbr](#cmd-bf-ttbf) : Text To BrainFuck
+    - [!ttac](#cmd-bf-ttac) : Text To AsCii
+    - [!actt](#cmd-bf-actt) : AsCii To Text
   - [QRCode](#cmd-qr)
-    - [!qr](#cmd-qr-qr)
+    - [!qr](#cmd-qr-qr) : QRcode
 - [如何貢獻](#contribute)
 
 ## 指令列表 <a id="cmd"></a>
@@ -34,6 +36,24 @@ powered by [Brainfuck-api](https://github.com/BWsix/Brainfuck-api)
 **Example**
 
 ![](https://i.imgur.com/WSUDhxl.png)
+
+#### convert text to ascii code array <a id="cmd-bf-ttac"></a>
+
+`!ttac {text}`
+
+**Example**
+
+![](https://i.imgur.com/6ZPo0iN.png)
+
+#### convert ascii code array to text<a id="cmd-bf-actt"></a>
+
+note that you can separate numbers by **any thing** (well... except numbers).
+
+`!actt {numbers}`
+
+**Example**
+
+![](https://i.imgur.com/Mp6A0A8.png)
 
 ### QRCode <a id="cmd-qr"></a>
 
