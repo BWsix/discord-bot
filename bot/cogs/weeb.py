@@ -2,6 +2,8 @@ from discord.ext import commands
 from discord import Message, Embed, Member
 from discord.channel import TextChannel
 from discord.message import MessageReference
+
+import re
 from random import choice, randint
 
 class Weeb(commands.Cog): 
@@ -61,37 +63,45 @@ class Weeb(commands.Cog):
 
   async def weeb(self, message: Message):
     channel: TextChannel = message.channel
+    author: Member = message.author
+    ref: MessageReference = message.reference
 
     if message.author == self.bot.user: return
     if channel.name.find("weeb") == -1: return 
     if not message.content: return
 
-    lines = "" 
+    content = "" 
+    links = []
 
+    line: str
     for line in message.content.split("\n"):
       if not line:
-        lines += '\n'
+        content += '\n'
         continue
 
-      lines += self.transform(line) + '\n'
+      for url in re.findall(r"(https?:\/\/\S*\.(?:png|jpg|jpeg))", line):
+        links.append(url)
+      
+      content += self.transform(line) + '\n'
 
-    if not lines: return 
+    await message.delete()
 
-    try:
-      author: Member = message.author
-
-      embed= Embed(description=lines, colour=author.color)
+    if content:
+      embed= Embed(description=content, colour=author.color)
       embed.set_author(
-        name=f"{author.display_name} #{author.top_role}",
+        name=author.display_name,
         icon_url=author.avatar_url
       )
 
-      ref: MessageReference = message.reference
-      if ref and (ref.guild_id == channel.guild.id) and (ref.channel_id == channel.id):
-        await channel.send(embed=embed, reference=ref)
-      else:
-        await channel.send(embed=embed)
+      if (not ref) or (ref.guild_id != channel.guild.id) or (ref.channel_id != channel.id):
+        ref = None
+      await channel.send(embed=embed, reference=ref)
 
-      await message.delete()
-    except Exception:
-      pass
+    for link in links:
+      img_embed = Embed(colour=author.color)
+      img_embed.set_author(
+        name=author.display_name,
+        icon_url=author.avatar_url
+      )
+      img_embed.set_image(url=link)
+      await channel.send(embed=img_embed)
