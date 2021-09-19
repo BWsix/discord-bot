@@ -1,7 +1,7 @@
 # Discord Bot For Fun
 
 ![](https://i.imgur.com/ZQLLmKd.png)  
-取得 Bob the bot - [只有 "Send message" 權限](https://discord.com/api/oauth2/authorize?client_id=808253042172493834&permissions=2048&scope=bot) / [管理員權限](https://discord.com/api/oauth2/authorize?client_id=808253042172493834&permissions=8&scope=bot)
+取得 Bob the bot - [只有 "Send message" 權限(無法使用部分功能)](https://discord.com/api/oauth2/authorize?client_id=808253042172493834&permissions=2048&scope=bot) / [管理員權限](https://discord.com/api/oauth2/authorize?client_id=808253042172493834&permissions=8&scope=bot)
 
 ## 目錄
 
@@ -15,8 +15,8 @@
     - [!qr](#cmd-qr-qr) : QRcode
   - [Image to Accii](#cmd-itac)
     - [!itac](#cmd-itac-itac) : Image To AsCii
-  - [Weeb](#cmd-weeb)
-    - [!weeb](#cmd-weeb-weeb) : WEEB
+- [Listeners](#listeners)
+  - [Weeb](#listener-weeb) : 讓你說話像個肥宅 (燦笑
 - [如何貢獻](#contribute)
 
 ## 指令列表 <a id="cmd"></a>
@@ -81,15 +81,15 @@ powered by [QRCode-api](https://github.com/BWsix/QRCode-api)
 
 ![](https://i.imgur.com/J64mnSg.png)
 
-### Weeb <a id="cmd-weeb"></a>
+## Listeners<a id="listeners"></a>
 
-#### weeb <a id="cmd-weeb-weeb"></a>
+### Weeb <a id="listener-weeb"></a>
 
-`!weeb {text}`
+只要頻道名稱包含 **weeb** 便會自動啟用
 
 **Example**
 
-![](https://i.imgur.com/ck6HeED.png)
+![](https://i.imgur.com/3FzXfuC.png)
 
 ## 貢獻 <a id="contribute"></a>
 
