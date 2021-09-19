@@ -1,6 +1,7 @@
 from discord.ext import commands
 from discord import Message, Embed, Member
 from discord.channel import TextChannel
+from discord.message import MessageReference
 from random import choice, randint
 
 class Weeb(commands.Cog): 
@@ -85,7 +86,12 @@ class Weeb(commands.Cog):
         icon_url=author.avatar_url
       )
 
-      await channel.send(embed=embed)
+      ref: MessageReference = message.reference
+      if ref and (ref.guild_id == channel.guild.id) and (ref.channel_id == channel.id):
+        await channel.send(embed=embed, reference=ref)
+      else:
+        await channel.send(embed=embed)
+
       await message.delete()
     except Exception:
       pass
