@@ -79,8 +79,11 @@ class Weeb(commands.Cog):
     try:
       author: Member = message.author
 
-      embed= Embed(description=lines)
-      embed.set_author(name=author.display_name, icon_url=author.avatar_url)
+      embed= Embed(description=lines, colour=author.color)
+      embed.set_author(
+        name=f"{author.display_name} #{author.top_role}",
+        icon_url=author.avatar_url
+      )
 
       await channel.send(embed=embed)
       await message.delete()
