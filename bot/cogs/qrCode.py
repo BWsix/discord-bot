@@ -3,7 +3,7 @@ import io
 import discord
 from discord.ext import commands
 
-BRAINFUCK_API_BASE_URL = "https://qrcode-api-vflc.vercel.app/api"
+BRAINFUCK_API_BASE_URL = "https://qrcode-api-vflc.vercel.app/api/image"
 
 class QRCode(commands.Cog):
   def __init__(self, bot: commands.Bot):
