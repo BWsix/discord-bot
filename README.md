@@ -15,6 +15,8 @@
     - [!qr](#cmd-qr-qr) : QRcode
   - [Image to Accii](#cmd-itac)
     - [!itac](#cmd-itac-itac) : Image To AsCii
+  - [Spotify](#cmd-spotify)
+    - [!search](#cmd-spotify-search) : search things on Spotify
 - [Listeners](#listeners)
   - [Weeb](#listener-weeb) : 讓你說話像個肥宅 (燦笑
 - [如何貢獻](#contribute)
@@ -80,6 +82,17 @@ powered by [QRCode-api](https://github.com/BWsix/QRCode-api)
 **Example**
 
 ![](https://i.imgur.com/J64mnSg.png)
+### Spotify<a id="cmd-spotify"></a>
+
+powered by [Spotify-api](https://github.com/BWsix/spotify-api)
+
+#### search things on spotify<a id="cmd-spotify-search"></a>
+
+`!spotify {your query string}` 
+
+**Example**
+
+![](https://i.imgur.com/z40Yc5D.png)
 
 ## Listeners<a id="listeners"></a>
 

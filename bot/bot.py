@@ -3,6 +3,7 @@ from bot.cogs.brainFuck import BrainFuck
 from bot.cogs.qrCode import QRCode
 from bot.cogs.image2Ascii import Image2Ascii
 from bot.cogs.weeb import Weeb
+from bot.cogs.spotify_search import Spotify_Search
 
 import discord
 from discord.ext import commands
@@ -19,6 +20,7 @@ def run(token: str):
     QRCode,
     Image2Ascii,
     Weeb,
+    Spotify_Search,
   ]
 
   for cog in cogs:
